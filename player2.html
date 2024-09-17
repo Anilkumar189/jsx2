@@ -1,0 +1,92 @@
+ <html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+          #d2{
+            margin-left: 450px;
+            margin-top: 250px;
+            
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div id="d1"></div>
+        <script type="text/babel">
+            var player1={
+              name:"SINDHU",
+              score:0,
+              sets:0,
+              service:false
+            }
+          var player2={
+            name:"MARIN",
+            score:0,
+            sets:0,
+            service:true
+          }
+           function sind(){
+            player1.score++;
+            player1.service=true;
+            player2.service=false;
+          if(player1.score>=21 && player1.score-player2.score>=2 ){
+            player1.sets++;
+            player1.score=0; 
+            player2.score=0;
+          }  
+          
+          Ai();
+            
+           }
+           function marin(){
+            player2.score++;
+            player2.service=true;
+            player1.service=false;
+           if(player2.score>=21 && player2.score-player1.score>=2){
+            player2.sets++;
+            player2.score=0;
+            player1.score=0;
+           }
+          Ai();
+           }
+
+          function Ai(){
+          var ui=<div id="d2">
+          <table border="2px solid"  style={{border:"red"}}>
+            <tr style={{backgroundColor:"orange"}}>
+              <td>PLAYER-NAME</td>
+              <td>PLAYER-SERVICE</td>
+              <td>PLAYER-SETS</td>
+              <td>PLAYER-SCORE</td>
+                </tr>
+            <tr style={{backgroundColor:"yellow"}}>
+                <td>{player1.name}</td>
+               <td>{player1.service &&<button>S</button>}</td>
+                <td>{player1.sets}</td>
+                <td>{player1.score}</td>
+                
+                </tr>
+               
+                <tr style={{backgroundColor:"yellow"}}>
+                <td>{player2.name}</td>
+                <td>{player2.service &&<button>S</button>}</td>
+                <td>{player2.sets}</td>
+                <td>{player2.score}</td>
+                </tr>
+                
+                </table>
+
+                <button onClick={()=>{sind()}} style={{backgroundColor:"green",margin:"20px"}}>ADD POINT TO SINDHU</button>
+                <button onClick={marin} style={{margin:"50px",backgroundColor:"green"}}>ADD POINT TO MARIN</button>
+                   
+              </div>
+            ReactDOM.render(ui,document.getElementById("d1"))
+          }
+          Ai();
+        
+    
+        </script>
+    </body>
+ </html>

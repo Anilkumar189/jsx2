@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        var x=["anilkumar"] 
+
+         var y=<h1>{x.map((e)=>{
+            return <h1>{e.length}</h1>
+         })}</h1>
+        ReactDOM.render(y,document.getElementById("d1"))
+    </script>
+</body>
+</html>

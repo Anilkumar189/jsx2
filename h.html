@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <input type="text" name="" id="d1">
+    <button onclick="abc()">ADD todo</button>
+    <ul id="d2"></ul>
+    <script>
+      var ar=[]
+      function abc(){
+        document.getElementById("d2").innerHTML=""
+          var x=document.getElementById("d1").value;
+          ar.push(x,e);
+
+        ar.forEach((i)=>{
+         var nli=document.createElement("li")
+         nli.innerHTML=i
+
+
+
+        var btn1=document.createElement("button")
+        btn1.innerHTML="DELETE"
+        nli.appendChild(btn1)
+
+        btn1.onclick=function(){
+            ar.splice(e,1)
+        }
+
+         document.getElementById("d2").appendChild(nli)
+        })
+
+      }
+
+
+
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+
+            var c=0;
+             function inc(){
+                c++;
+                ui()
+             }
+
+             function dec(){
+                c--;
+                 ui()
+             }
+             function re(){
+                c=0;
+                ui();
+             }
+             function ui(){
+            var count=<div>
+                <h1>count:{c}</h1>
+                <button onClick={()=>{inc()}}>increment</button>
+                <button onClick={()=>{dec()}}>decrement</button>
+                <button onClick={()=>{re()}}>reset</button>
+                </div>
+                ReactDOM.render(count,document.getElementById("d1"))
+            }
+            ui()
+        </script>
+    </body>
+</html>

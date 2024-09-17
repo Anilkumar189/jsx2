@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="cir.js"></script>
+        <style>
+            #d2{
+                margin-left: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="d1"></div>
+        <script type="text/babel">
+            function del(e,i){
+                x.splice(i,1)
+                ui(); 
+            }
+
+
+
+             function f(){
+                x.sort((c,d)=>{
+                    if(c.firstname>d.firstname){
+                        return 1;
+
+                    }
+                    else{
+                        return -1;
+                    }
+
+                })
+                ui();
+             }
+
+             function l(){
+                x.sort((e,f)=>{
+                    if(e.lastname>f.lastname){
+                        return 1;
+                    }
+                     else{
+                        return -1;
+
+                     }
+                })
+                ui();
+             }
+
+             function a(){
+            x.sort(function(a,b){
+                if(a.age>b.age){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            })
+            ui();
+        }
+ 
+        function p(){
+            x.sort((g,h)=>{
+              if(g.place>h.place){
+                return 1;
+              }
+              else{
+                return -1;
+              }   
+           
+            })
+            ui();
+        }
+            
+        function d(){
+            x.sort((j,k)=>{
+                if(j.dob>k.dob){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            })
+            ui();
+        }
+
+           function c(){
+            x.sort((l,m)=>{
+                if(l.centuries>m.centuries){
+                    return 1;
+                }
+                return -1;
+            })
+            ui();
+           }
+           
+        
+             function ui(){
+            var ui=<table border="2px" id="d2">
+                <thead style={{backgroundColor:"orange"}}>
+                <th onClick={()=>{f()}}>firstname</th>
+                <th onClick={()=>{l()}}>lastname</th>
+                <th onClick={()=>a()}>age</th>
+                <th>gender</th>
+                <th onClick={()=>{p()}}>place</th>
+                <th onClick={()=>{d()}}>date-of-birth</th>
+                <th onClick={()=>{c()}}>centuries</th>
+                <th>Action</th>
+            </thead>
+            {
+                x.map((a,i)=>{
+                    return <tr style={{backgroundColor:"pink"}}>
+                        <td>{a.firstname}</td>
+                        <td>{a.lastname}</td>
+                        <td>{a.age}</td>
+                        <td>{a.gender}</td>
+                        <td>{a.place}</td>
+                        <td>{a.dob}</td>
+                        <td>{a.centuries}</td>
+                        <td><button onClick={()=>{del(a,i)}} style={{backgroundColor:"yellow"}}>DELETE</button></td>
+                        </tr>
+                 })
+            }
+                </table>
+            
+          ReactDOM.render(ui,document.getElementById("d1"))
+             }
+             ui();
+        </script>
+    </body>
+</html>

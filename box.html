@@ -1,0 +1,27 @@
+ <html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+
+            var obj={
+                name:"nani",
+                age:"34",
+                place:"hyd",
+                gender:"male"
+            }
+             
+             var f=<div style={{border:"2px solid"}}><li>name:{obj.name}</li>
+                      <li> age:{obj.age}</li>
+                      <li>place:{obj.place}</li>
+                      <li>gender:{obj.gender}</li>
+                       </div>
+
+            ReactDOM.render(f,document.getElementById("d1"))
+        </script>
+    </body>
+ </html>
